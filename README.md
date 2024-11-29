@@ -4,11 +4,13 @@ The Real Estate Agency Website is designed to help users find their ideal proper
 
 ### App Preview
 
-![Home page](img/img1.png)
-![Movies page](img/img2.png)
-![Search by movie page](img/img3.png)
-![Search by people page](img/img4.png)
-![Description page](img/img5.png)
+![Register page](imgs/img1.png)
+![Home page](imgs/img2.png)
+!['Find you perfect home' filter](imgs/img3.png)
+![Latest properties page](imgs/img4.png)
+![About me page](imgs/img5.png)
+![Contact us page](imgs/img6.png)
+![FAQs page](imgs/img7.png)
 
 ### Features
 
