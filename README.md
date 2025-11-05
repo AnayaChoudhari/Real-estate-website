@@ -4,13 +4,15 @@ DreamSpace is a modern real estate website that helps users find their ideal pro
 
 ### App Preview
 
-![Register page](imgs/img1.png)
-![Home page](imgs/img2.png)
-!['Find you perfect home' filter](imgs/img3.png)
-![Latest properties page](imgs/img4.png)
-![About me page](imgs/img5.png)
-![Contact us page](imgs/img6.png)
-![FAQs page](imgs/img7.png)
+![Home page](imgs/home.png)
+!['Find you perfect home' filter](imgs/Filter%20search.png)
+![Property details page](imgs/Property%20details.png)
+![About me page](imgs/about%20us.png)
+![Contact us page](imgs/contact%20us.png)
+![Property listings page](imgs/All%20listings.png)
+![FAQs page](imgs/FAQ.png)
+![Post property page](imgs/post%20prop.png)
+![Saved listings page](imgs/saved%20listings.png)
 
 ### Features
 
