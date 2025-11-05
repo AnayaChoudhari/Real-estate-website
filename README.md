@@ -1,6 +1,6 @@
-## Real Estate website
+## DreamSpace
 
-The Real Estate Agency Website is designed to help users find their ideal properties by offering customizable search filters. It includes features like a "Find Your Perfect Home" filter system, client reviews, and an FAQ section. The platform allows users to search for properties based on various factors such as location, type, and budget, making it easy to browse available listings and make informed decisions.
+DreamSpace is a modern real estate website that helps users find their ideal properties with easy search filters. It includes features like property posting, saved listings, a user dashboard, client reviews, a contact page, and an FAQ section. DreamSpace makes browsing, managing, and choosing properties simple and hassle-free.
 
 ### App Preview
 
@@ -29,25 +29,33 @@ The Real Estate Agency Website is designed to help users find their ideal proper
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/YourUsername/RealEstateWebsite.git
+   git clone https://github.com/AnayaChoudhari/Real-estate-website.git
    ```
 
 2. **Navigate to the Project Directory:**
    ```bash
-   cd RealEstateWebsite
+   cd Real-estate-website
    ```
 
-3. **Install Dependencies:**
+3. **Install PHP (if not already installed):**
+   Windows:
    ```bash
-   composer install
+   Download from https://windows.php.net/download
    ```
-   
-4. **Start the Server:**
+   Mac (Homebrew):
+   ```bash
+   brew install php
+   ```
+4. **Verify PHP Installation:**
+   ```bash
+   php -v
+   ```   
+5. **Start the Server:**
    ```bash
    php -S localhost:8000
    ```
-4. **Access the Application:**
-   - Open your browser and go to http://localhost:8000 to start using the DiagnosticHub.
+6. **Access the Application:**
+   - Open your browser and go to [http://localhost/Real-estate-website/home.php](http://localhost/Real-estate-website/home.php) to start using DreamSpace.
 
 ### Contributing
 
