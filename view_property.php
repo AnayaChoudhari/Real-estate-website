@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 include 'components/connect.php';
 
@@ -36,7 +36,7 @@ include 'components/save_send.php';
 
 </head>
 <body>
-   
+
 <?php include 'components/user_header.php'; ?>
 
 <!-- view property section starts  -->
@@ -82,7 +82,7 @@ include 'components/save_send.php';
       <h3 class="name"><?= $fetch_property['property_name']; ?></h3>
       <p class="location"><i class="fas fa-map-marker-alt"></i><span><?= $fetch_property['address']; ?></span></p>
       <div class="info">
-         <p><i class="fas fa-indian-rupee-sign"></i><span><?= $fetch_property['price']; ?></span></p>
+         <p><i class="fas fa-dollar-sign"></i><span><?= $fetch_property['price']; ?></span></p>
          <p><i class="fas fa-user"></i><span><?= $fetch_user['name']; ?></span></p>
          <p><i class="fas fa-phone"></i><a href="tel:1234567890"><?= $fetch_user['number']; ?></a></p>
          <p><i class="fas fa-building"></i><span><?= $fetch_property['type']; ?></span></p>
@@ -93,7 +93,7 @@ include 'components/save_send.php';
       <div class="flex">
          <div class="box">
             <p><i>rooms :</i><span><?= $fetch_property['bhk']; ?> BHK</span></p>
-            <p><i>deposit amount : </i><span><span class="fas fa-indian-rupee-sign" style="margin-right: .5rem;"></span><?= $fetch_property['deposite']; ?></span></p>
+            <p><i>deposit amount : </i><span><span class="fas fa-dollar-sign" style="margin-right: .5rem;"></span><?= $fetch_property['deposite']; ?></span></p>
             <p><i>status :</i><span><?= $fetch_property['status']; ?></span></p>
             <p><i>bedroom :</i><span><?= $fetch_property['bedroom']; ?></span></p>
             <p><i>bathroom :</i><span><?= $fetch_property['bathroom']; ?></span></p>
@@ -136,7 +136,7 @@ include 'components/save_send.php';
          ?>
          <button type="submit" name="save" class="save"><i class="fas fa-heart"></i><span>saved</span></button>
          <?php
-            }else{ 
+            }else{
          ?>
          <button type="submit" name="save" class="save"><i class="far fa-heart"></i><span>save</span></button>
          <?php

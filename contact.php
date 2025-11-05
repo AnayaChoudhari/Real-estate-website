@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 include 'components/connect.php';
 
@@ -51,7 +51,7 @@ if(isset($_POST['send'])){
 
 </head>
 <body>
-   
+
 <?php include 'components/user_header.php'; ?>
 
 <!-- contact section starts  -->
@@ -86,32 +86,32 @@ if(isset($_POST['send'])){
 
       <div class="box active">
          <h3><span>how to cancel booking?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
+         <p>You can cancel your booking anytime from your account dashboard or by contacting our support team.</p>
       </div>
 
       <div class="box active">
          <h3><span>when will I get the possession?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
+         <p>Possession timelines depend on the property type. Your agent will provide an exact handover schedule.</p>
       </div>
 
       <div class="box">
          <h3><span>where can I pay the rent?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
+         <p>Rent payments can be made online through your account or directly to the property owner.</p>
       </div>
 
       <div class="box">
          <h3><span>how to contact with the buyers?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
+         <p>Verified buyers can be contacted via in-app messaging or through your assigned agent.</p>
       </div>
 
       <div class="box">
          <h3><span>why my listing not showing up?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
+         <p>Listings undergo a short verification process. They appear once approved.</p>
       </div>
 
       <div class="box">
          <h3><span>how to promote my listing?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
+         <p>Enable “Boost Listing” in your dashboard to reach more buyers instantly.</p>
       </div>
 
    </div>

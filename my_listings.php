@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 include 'components/connect.php';
 
@@ -71,7 +71,7 @@ if(isset($_POST['delete'])){
 
 </head>
 <body>
-   
+
 <?php include 'components/user_header.php'; ?>
 
 <section class="my-listings">
@@ -116,10 +116,15 @@ if(isset($_POST['delete'])){
    <form accept="" method="POST" class="box">
       <input type="hidden" name="property_id" value="<?= $property_id; ?>">
       <div class="thumb">
-         <p><i class="far fa-image"></i><span><?= $total_images; ?></span></p> 
-         <img src="uploaded_files/<?= $fetch_property['image_01']; ?>" alt="">
+         <p><i class="far fa-image"></i><span><?= $total_images; ?></span></p>
+         <!-- <img src="uploaded_files/<?= $fetch_property['image_01']; ?>" alt=""> -->
+         <!-- Replace line 117 with: -->
+         <div class="thumb">
+            <p><i class="far fa-image"></i><span><?= $total_images; ?></span></p>
+            <img src="/Real-estate-website/uploaded_files/<?= $fetch_property['image_01']; ?>" alt="">
+         </div>
       </div>
-      <div class="price"><i class="fas fa-indian-rupee-sign"></i><span><?= $fetch_property['price']; ?></span></div>
+      <div class="price"><i class="fas fa-dollar-sign"></i><span><?= $fetch_property['price']; ?></span></div>
       <h3 class="name"><?= $fetch_property['property_name']; ?></h3>
       <p class="location"><i class="fas fa-map-marker-alt"></i><span><?= $fetch_property['address']; ?></span></p>
       <div class="flex-btn">

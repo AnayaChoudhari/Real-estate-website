@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 include 'components/connect.php';
 
@@ -26,7 +26,7 @@ if(isset($_COOKIE['user_id'])){
 
 </head>
 <body>
-   
+
 <?php include 'components/user_header.php'; ?>
 
 <!-- about section starts  -->
@@ -39,7 +39,7 @@ if(isset($_COOKIE['user_id'])){
       </div>
       <div class="content">
          <h3>why choose us?</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolorem provident voluptatum distinctio laborum veritatis vitae suscipit praesentium fugiat unde?</p>
+         <p>We provide trusted property listings, transparent pricing, and personalized guidance to help you make confident real estate decisions. Whether you’re buying, selling, or renting, our team ensures a smooth and secure experience.</p>
          <a href="contact.php" class="inline-btn">contact us</a>
       </div>
    </div>
@@ -59,19 +59,19 @@ if(isset($_COOKIE['user_id'])){
       <div class="box">
          <img src="images/step-1.png" alt="">
          <h3>search property</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, placeat.</p>
+         <p>Quickly find properties that match your lifestyle and budget.</p>
       </div>
 
       <div class="box">
          <img src="images/step-2.png" alt="">
          <h3>contact agents</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, placeat.</p>
+         <p>Connect with verified real estate agents instantly.</p>
       </div>
 
       <div class="box">
          <img src="images/step-3.png" alt="">
          <h3>enjoy property</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, placeat.</p>
+         <p>Move into your new home with complete peace of mind.</p>
       </div>
 
    </div>
@@ -102,7 +102,7 @@ if(isset($_COOKIE['user_id'])){
                </div>
             </div>
          </div>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci voluptates delectus distinctio quam sequi error eum suscipit tempore inventore ex!</p>
+         <p>Very smooth experience! The team helped me find the perfect home.</p>
       </div>
 
       <div class="box">
@@ -119,7 +119,7 @@ if(isset($_COOKIE['user_id'])){
                </div>
             </div>
          </div>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci voluptates delectus distinctio quam sequi error eum suscipit tempore inventore ex!</p>
+         <p>Fast, reliable, and professional service. Highly recommended.</p>
       </div>
 
       <div class="box">
@@ -136,7 +136,7 @@ if(isset($_COOKIE['user_id'])){
                </div>
             </div>
          </div>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci voluptates delectus distinctio quam sequi error eum suscipit tempore inventore ex!</p>
+         <p>Great platform for comparing properties. </p>
       </div>
 
       <div class="box">
@@ -153,7 +153,7 @@ if(isset($_COOKIE['user_id'])){
                </div>
             </div>
          </div>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci voluptates delectus distinctio quam sequi error eum suscipit tempore inventore ex!</p>
+         <p>I found a rental within two days. Excellent support from the team.</p>
       </div>
 
       <div class="box">
@@ -170,7 +170,7 @@ if(isset($_COOKIE['user_id'])){
                </div>
             </div>
          </div>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci voluptates delectus distinctio quam sequi error eum suscipit tempore inventore ex!</p>
+         <p>Transparent process and helpful agents. Made everything easy for me.</p>
       </div>
 
       <div class="box">
@@ -187,7 +187,7 @@ if(isset($_COOKIE['user_id'])){
                </div>
             </div>
          </div>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci voluptates delectus distinctio quam sequi error eum suscipit tempore inventore ex!</p>
+         <p>Best real-estate website I’ve used. Simple and user-friendly.</p>
       </div>
 
    </div>

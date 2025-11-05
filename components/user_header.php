@@ -4,7 +4,7 @@
 
    <nav class="navbar nav-1">
       <section class="flex">
-         <a href="home.php" class="logo"><i class="fas fa-house"></i>MyHome</a>
+         <a href="home.php" class="logo"><i class="fas fa-house"></i>DreamSpace</a>
 
          <ul>
             <li><a href="post_property.php">post property<i class="fas fa-paper-plane"></i></a></li>
@@ -33,9 +33,9 @@
                </li>
                <li><a href="#">help<i class="fas fa-angle-down"></i></a>
                   <ul>
-                     <li><a href="about.php">about us</a></i></li>
-                     <li><a href="contact.php">contact us</a></i></li>
-                     <li><a href="contact.php#faq">FAQ</a></i></li>
+                     <li><a href="about.php">about us</a></li>
+                     <li><a href="contact.php">contact us</a></li>
+                     <li><a href="contact.php#faq">FAQ</a></li>
                   </ul>
                </li>
             </ul>
@@ -45,12 +45,15 @@
             <li><a href="saved.php">saved <i class="far fa-heart"></i></a></li>
             <li><a href="#">account <i class="fas fa-angle-down"></i></a>
                <ul>
-                  <li><a href="login.php">login now</a></li>
-                  <li><a href="register.php">register new</a></li>
                   <?php if($user_id != ''){ ?>
-                  <li><a href="update.php">update profile</a></li>
-                  <li><a href="components/user_logout.php" onclick="return confirm('logout from this website?');">logout</a>
-                  <?php } ?></li>
+                     <!-- Show these options when LOGGED IN -->
+                     <li><a href="update.php">update profile</a></li>
+                     <li><a href="components/user_logout.php" onclick="return confirm('logout from this website?');">logout</a></li>
+                  <?php } else { ?>
+                     <!-- Show these options when NOT logged in -->
+                     <li><a href="login.php">login now</a></li>
+                     <li><a href="register.php">register new</a></li>
+                  <?php } ?>
                </ul>
             </li>
          </ul>

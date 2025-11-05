@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 include 'components/connect.php';
 
@@ -37,7 +37,7 @@ if(isset($_POST['post'])){
    $balcony = $_POST['balcony'];
    $balcony = filter_var($balcony, FILTER_SANITIZE_STRING);
    $carpet = $_POST['carpet'];
-   $carpet = filter_var($carpet, FILTER_SANITIZE_STRING); 
+   $carpet = filter_var($carpet, FILTER_SANITIZE_STRING);
    $age = $_POST['age'];
    $age = filter_var($age, FILTER_SANITIZE_STRING);
    $total_floors = $_POST['total_floors'];
@@ -122,94 +122,154 @@ if(isset($_POST['post'])){
       $market_area = 'no';
    }
 
-   $image_02 = $_FILES['image_02']['name'];
-   $image_02 = filter_var($image_02, FILTER_SANITIZE_STRING);
-   $image_02_ext = pathinfo($image_02, PATHINFO_EXTENSION);
-   $rename_image_02 = create_unique_id().'.'.$image_02_ext;
-   $image_02_tmp_name = $_FILES['image_02']['tmp_name'];
-   $image_02_size = $_FILES['image_02']['size'];
-   $image_02_folder = 'uploaded_files/'.$rename_image_02;
+if(isset($_POST['post'])){
 
-   if(!empty($image_02)){
-      if($image_02_size > 2000000){
-         $warning_msg[] = 'image 02 size is too large!';
-      }else{
-         move_uploaded_file($image_02_tmp_name, $image_02_folder);
-      }
-   }else{
-      $rename_image_02 = '';
+   $id = create_unique_id();
+   // ... [ALL YOUR EXISTING FORM DATA PROCESSING CODE - KEEP IT AS IS] ...
+
+   // CREATE UPLOAD DIRECTORY IF IT DOESN'T EXIST
+   $upload_dir = 'uploaded_files/';
+   if (!file_exists($upload_dir)) {
+       if(!mkdir($upload_dir, 0777, true)){
+           $warning_msg[] = 'Failed to create upload directory!';
+       }
    }
 
-   $image_03 = $_FILES['image_03']['name'];
-   $image_03 = filter_var($image_03, FILTER_SANITIZE_STRING);
-   $image_03_ext = pathinfo($image_03, PATHINFO_EXTENSION);
-   $rename_image_03 = create_unique_id().'.'.$image_03_ext;
-   $image_03_tmp_name = $_FILES['image_03']['tmp_name'];
-   $image_03_size = $_FILES['image_03']['size'];
-   $image_03_folder = 'uploaded_files/'.$rename_image_03;
-
-   if(!empty($image_03)){
-      if($image_03_size > 2000000){
-         $warning_msg[] = 'image 03 size is too large!';
-      }else{
-         move_uploaded_file($image_03_tmp_name, $image_03_folder);
-      }
-   }else{
-      $rename_image_03 = '';
+   // Check if directory is writable
+   if(!is_writable($upload_dir)){
+       $warning_msg[] = 'Upload directory is not writable! Check permissions.';
    }
 
-   $image_04 = $_FILES['image_04']['name'];
-   $image_04 = filter_var($image_04, FILTER_SANITIZE_STRING);
-   $image_04_ext = pathinfo($image_04, PATHINFO_EXTENSION);
-   $rename_image_04 = create_unique_id().'.'.$image_04_ext;
-   $image_04_tmp_name = $_FILES['image_04']['tmp_name'];
-   $image_04_size = $_FILES['image_04']['size'];
-   $image_04_folder = 'uploaded_files/'.$rename_image_04;
+   // ALLOWED IMAGE TYPES
+   $allowed_types = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp'];
 
-   if(!empty($image_04)){
-      if($image_04_size > 2000000){
-         $warning_msg[] = 'image 04 size is too large!';
-      }else{
-         move_uploaded_file($image_04_tmp_name, $image_04_folder);
-      }
+   // IMAGE 01 - REQUIRED
+   $rename_image_01 = '';
+   if(isset($_FILES['image_01']) && $_FILES['image_01']['error'] == 0){
+       $image_01 = $_FILES['image_01']['name'];
+       $image_01 = filter_var($image_01, FILTER_SANITIZE_STRING);
+       $image_01_ext = strtolower(pathinfo($image_01, PATHINFO_EXTENSION));
+
+       // Validate file type
+       if(!in_array($image_01_ext, $allowed_types)){
+           $warning_msg[] = 'Image 01: Invalid file type! Only JPG, JPEG, PNG, GIF, WEBP, BMP allowed.';
+       }elseif($image_01_size > 2000000){
+           $warning_msg[] = 'Image 01 size too large! Maximum 2MB allowed.';
+       }else{
+           $rename_image_01 = create_unique_id().'.'.$image_01_ext;
+           $image_01_tmp_name = $_FILES['image_01']['tmp_name'];
+           $image_01_size = $_FILES['image_01']['size'];
+           $image_01_folder = $upload_dir.$rename_image_01;
+       }
    }else{
-      $rename_image_04 = '';
+       $warning_msg[] = 'Image 01 is required!';
    }
 
-   $image_05 = $_FILES['image_05']['name'];
-   $image_05 = filter_var($image_05, FILTER_SANITIZE_STRING);
-   $image_05_ext = pathinfo($image_05, PATHINFO_EXTENSION);
-   $rename_image_05 = create_unique_id().'.'.$image_05_ext;
-   $image_05_tmp_name = $_FILES['image_05']['tmp_name'];
-   $image_05_size = $_FILES['image_05']['size'];
-   $image_05_folder = 'uploaded_files/'.$rename_image_05;
+   // IMAGE 02 - OPTIONAL
+   $rename_image_02 = '';
+   if(isset($_FILES['image_02']) && $_FILES['image_02']['error'] == 0){
+       $image_02 = $_FILES['image_02']['name'];
+       $image_02 = filter_var($image_02, FILTER_SANITIZE_STRING);
+       $image_02_ext = strtolower(pathinfo($image_02, PATHINFO_EXTENSION));
+       $image_02_tmp_name = $_FILES['image_02']['tmp_name'];
+       $image_02_size = $_FILES['image_02']['size'];
 
-   if(!empty($image_05)){
-      if($image_05_size > 2000000){
-         $warning_msg[] = 'image 05 size is too large!';
-      }else{
-         move_uploaded_file($image_05_tmp_name, $image_05_folder);
-      }
-   }else{
-      $rename_image_05 = '';
+       // Validate file type
+       if(!in_array($image_02_ext, $allowed_types)){
+           $warning_msg[] = 'Image 02: Invalid file type! Only JPG, JPEG, PNG, GIF, WEBP, BMP allowed.';
+       }elseif($image_02_size > 2000000){
+           $warning_msg[] = 'Image 02 size is too large!';
+       }else{
+           $rename_image_02 = create_unique_id().'.'.$image_02_ext;
+           $image_02_folder = $upload_dir.$rename_image_02;
+           if(!move_uploaded_file($image_02_tmp_name, $image_02_folder)){
+               $warning_msg[] = 'Failed to upload image 02!';
+           }
+       }
    }
 
-   $image_01 = $_FILES['image_01']['name'];
-   $image_01 = filter_var($image_01, FILTER_SANITIZE_STRING);
-   $image_01_ext = pathinfo($image_01, PATHINFO_EXTENSION);
-   $rename_image_01 = create_unique_id().'.'.$image_01_ext;
-   $image_01_tmp_name = $_FILES['image_01']['tmp_name'];
-   $image_01_size = $_FILES['image_01']['size'];
-   $image_01_folder = 'uploaded_files/'.$rename_image_01;
+   // IMAGE 03 - OPTIONAL
+   $rename_image_03 = '';
+   if(isset($_FILES['image_03']) && $_FILES['image_03']['error'] == 0){
+       $image_03 = $_FILES['image_03']['name'];
+       $image_03 = filter_var($image_03, FILTER_SANITIZE_STRING);
+       $image_03_ext = strtolower(pathinfo($image_03, PATHINFO_EXTENSION));
+       $image_03_tmp_name = $_FILES['image_03']['tmp_name'];
+       $image_03_size = $_FILES['image_03']['size'];
 
-   if($image_01_size > 2000000){
-      $warning_msg[] = 'image 01 size too large!';
-   }else{
-      $insert_property = $conn->prepare("INSERT INTO `property`(id, user_id, property_name, address, price, type, offer, status, furnished, bhk, deposite, bedroom, bathroom, balcony, carpet, age, total_floors, room_floor, loan, lift, security_guard, play_ground, garden, water_supply, power_backup, parking_area, gym, shopping_mall, hospital, school, market_area, image_01, image_02, image_03, image_04, image_05, description) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"); 
-      $insert_property->execute([$id, $user_id, $property_name, $address, $price, $type, $offer, $status, $furnished, $bhk, $deposite, $bedroom, $bathroom, $balcony, $carpet, $age, $total_floors, $room_floor, $loan, $lift, $security_guard, $play_ground, $garden, $water_supply, $power_backup, $parking_area, $gym, $shopping_mall, $hospital, $school, $market_area, $rename_image_01, $rename_image_02, $rename_image_03, $rename_image_04, $rename_image_05, $description]);
-      move_uploaded_file($image_01_tmp_name, $image_01_folder);
-      $success_msg[] = 'property posted successfully!';
+       // Validate file type
+       if(!in_array($image_03_ext, $allowed_types)){
+           $warning_msg[] = 'Image 03: Invalid file type! Only JPG, JPEG, PNG, GIF, WEBP, BMP allowed.';
+       }elseif($image_03_size > 2000000){
+           $warning_msg[] = 'Image 03 size is too large!';
+       }else{
+           $rename_image_03 = create_unique_id().'.'.$image_03_ext;
+           $image_03_folder = $upload_dir.$rename_image_03;
+           if(!move_uploaded_file($image_03_tmp_name, $image_03_folder)){
+               $warning_msg[] = 'Failed to upload image 03!';
+           }
+       }
    }
+
+   // IMAGE 04 - OPTIONAL
+   $rename_image_04 = '';
+   if(isset($_FILES['image_04']) && $_FILES['image_04']['error'] == 0){
+       $image_04 = $_FILES['image_04']['name'];
+       $image_04 = filter_var($image_04, FILTER_SANITIZE_STRING);
+       $image_04_ext = strtolower(pathinfo($image_04, PATHINFO_EXTENSION));
+       $image_04_tmp_name = $_FILES['image_04']['tmp_name'];
+       $image_04_size = $_FILES['image_04']['size'];
+
+       // Validate file type
+       if(!in_array($image_04_ext, $allowed_types)){
+           $warning_msg[] = 'Image 04: Invalid file type! Only JPG, JPEG, PNG, GIF, WEBP, BMP allowed.';
+       }elseif($image_04_size > 2000000){
+           $warning_msg[] = 'Image 04 size is too large!';
+       }else{
+           $rename_image_04 = create_unique_id().'.'.$image_04_ext;
+           $image_04_folder = $upload_dir.$rename_image_04;
+           if(!move_uploaded_file($image_04_tmp_name, $image_04_folder)){
+               $warning_msg[] = 'Failed to upload image 04!';
+           }
+       }
+   }
+
+   // IMAGE 05 - OPTIONAL
+   $rename_image_05 = '';
+   if(isset($_FILES['image_05']) && $_FILES['image_05']['error'] == 0){
+       $image_05 = $_FILES['image_05']['name'];
+       $image_05 = filter_var($image_05, FILTER_SANITIZE_STRING);
+       $image_05_ext = strtolower(pathinfo($image_05, PATHINFO_EXTENSION));
+       $image_05_tmp_name = $_FILES['image_05']['tmp_name'];
+       $image_05_size = $_FILES['image_05']['size'];
+
+       // Validate file type
+       if(!in_array($image_05_ext, $allowed_types)){
+           $warning_msg[] = 'Image 05: Invalid file type! Only JPG, JPEG, PNG, GIF, WEBP, BMP allowed.';
+       }elseif($image_05_size > 2000000){
+           $warning_msg[] = 'Image 05 size is too large!';
+       }else{
+           $rename_image_05 = create_unique_id().'.'.$image_05_ext;
+           $image_05_folder = $upload_dir.$rename_image_05;
+           if(!move_uploaded_file($image_05_tmp_name, $image_05_folder)){
+               $warning_msg[] = 'Failed to upload image 05!';
+           }
+       }
+   }
+
+   // ONLY PROCEED IF NO WARNINGS AND IMAGE 01 IS VALID
+   if(empty($warning_msg) && !empty($rename_image_01)){
+       // MOVE THE MAIN IMAGE
+       if(move_uploaded_file($image_01_tmp_name, $image_01_folder)){
+           // INSERT INTO DATABASE
+           $insert_property = $conn->prepare("INSERT INTO `property`(id, user_id, property_name, address, price, type, offer, status, furnished, bhk, deposite, bedroom, bathroom, balcony, carpet, age, total_floors, room_floor, loan, lift, security_guard, play_ground, garden, water_supply, power_backup, parking_area, gym, shopping_mall, hospital, school, market_area, image_01, image_02, image_03, image_04, image_05, description) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+           $insert_property->execute([$id, $user_id, $property_name, $address, $price, $type, $offer, $status, $furnished, $bhk, $deposite, $bedroom, $bathroom, $balcony, $carpet, $age, $total_floors, $room_floor, $loan, $lift, $security_guard, $play_ground, $garden, $water_supply, $power_backup, $parking_area, $gym, $shopping_mall, $hospital, $school, $market_area, $rename_image_01, $rename_image_02, $rename_image_03, $rename_image_04, $rename_image_05, $description]);
+           $success_msg[] = 'Property posted successfully!';
+       }else{
+           $warning_msg[] = 'Failed to upload main image! Check folder permissions: '.$image_01_folder;
+       }
+   }
+}
 
 }
 
@@ -231,7 +291,7 @@ if(isset($_POST['post'])){
 
 </head>
 <body>
-   
+
 <?php include 'components/user_header.php'; ?>
 
 <section class="property-form">
@@ -394,7 +454,7 @@ if(isset($_POST['post'])){
          <p>image 01 <span>*</span></p>
          <input type="file" name="image_01" class="input" accept="image/*" required>
       </div>
-      <div class="flex"> 
+      <div class="flex">
          <div class="box">
             <p>image 02</p>
             <input type="file" name="image_02" class="input" accept="image/*">
@@ -410,7 +470,7 @@ if(isset($_POST['post'])){
          <div class="box">
             <p>image 05</p>
             <input type="file" name="image_05" class="input" accept="image/*">
-         </div>   
+         </div>
       </div>
       <input type="submit" value="post property" class="btn" name="post">
    </form>

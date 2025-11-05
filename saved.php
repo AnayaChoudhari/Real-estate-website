@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 include 'components/connect.php';
 
@@ -29,7 +29,7 @@ include 'components/save_send.php';
 
 </head>
 <body>
-   
+
 <?php include 'components/user_header.php'; ?>
 
 <section class="listings">
@@ -87,14 +87,14 @@ include 'components/save_send.php';
             ?>
             <button type="submit" name="save" class="save"><i class="fas fa-heart"></i><span>remove from saved</span></button>
             <?php
-               }else{ 
+               }else{
             ?>
             <button type="submit" name="save" class="save"><i class="far fa-heart"></i><span>save</span></button>
             <?php
                }
             ?>
             <div class="thumb">
-               <p class="total-images"><i class="far fa-image"></i><span><?= $total_images; ?></span></p> 
+               <p class="total-images"><i class="far fa-image"></i><span><?= $total_images; ?></span></p>
                <img src="uploaded_files/<?= $fetch_property['image_01']; ?>" alt="">
             </div>
             <div class="admin">
@@ -106,7 +106,7 @@ include 'components/save_send.php';
             </div>
          </div>
          <div class="box">
-            <div class="price"><i class="fas fa-indian-rupee-sign"></i><span><?= $fetch_property['price']; ?></span></div>
+            <div class="price"><i class="fas fa-dollar-sign"></i><span><?= $fetch_property['price']; ?></span></div>
             <h3 class="name"><?= $fetch_property['property_name']; ?></h3>
             <p class="location"><i class="fas fa-map-marker-alt"></i><span><?= $fetch_property['address']; ?></span></p>
             <div class="flex">
@@ -133,7 +133,7 @@ include 'components/save_send.php';
          echo '<p class="empty">no properties saved yet! <a href="listings.php" style="margin-top:1.5rem;" class="btn">discover more</a></p>';
       }
       ?>
-      
+
    </div>
 
 </section>

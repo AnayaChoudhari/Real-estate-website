@@ -11,9 +11,9 @@ if(isset($_COOKIE['user_id'])){
 if(isset($_POST['submit'])){
 
    $email = $_POST['email'];
-   $email = filter_var($email, FILTER_SANITIZE_STRING); 
+   $email = filter_var($email, FILTER_SANITIZE_STRING);
    $pass = sha1($_POST['pass']);
-   $pass = filter_var($pass, FILTER_SANITIZE_STRING); 
+   $pass = filter_var($pass, FILTER_SANITIZE_STRING);
 
    $select_users = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ? LIMIT 1");
    $select_users->execute([$email, $pass]);
@@ -46,7 +46,7 @@ if(isset($_POST['submit'])){
 
 </head>
 <body>
-   
+
 <?php include 'components/user_header.php'; ?>
 
 <!-- login section starts  -->
@@ -57,7 +57,7 @@ if(isset($_POST['submit'])){
       <h3>welcome back!</h3>
       <input type="email" name="email" required maxlength="50" placeholder="enter your email" class="box">
       <input type="password" name="pass" required maxlength="20" placeholder="enter your password" class="box">
-      <p>don't have an account? <a href="register.html">register new</a></p>
+      <p>don't have an account? <a href="register.php">register new</a></p>
       <input type="submit" value="login now" name="submit" class="btn">
    </form>
 

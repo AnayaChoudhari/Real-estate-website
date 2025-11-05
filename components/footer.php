@@ -7,8 +7,8 @@
       <div class="box">
       <a href="tel:1234567890"><i class="fas fa-phone fa-beat"></i><span>123456789</span></a>
          <a href="tel:1112223333"><i class="fas fa-phone fa-beat"></i><span>1112223333</span></a>
-         <a href="mailto:shaikhanas@gmail.com"><i class="fas fa-envelope fa-beat"></i><span>shaikhanass@gmail.com</span></a>
-         <a href="#"><i class="fa-solid fa-location-crosshairs fa-beat-fade"></i><span>mumbai, india - 400104</span></a>
+         <a href="mailto:anayachoudhari02@gmail.com"><i class="fas fa-envelope fa-beat"></i><span>anayachoudhari02@gmail.com</span></a>
+         <a href="#"><i class="fa-solid fa-location-crosshairs fa-beat-fade"></i><span>Pennsylvania, USA</span></a>
       </div>
 
       <div class="box">
@@ -29,7 +29,7 @@
 
    </section>
 
-  
+
 
 </footer>
 
