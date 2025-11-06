@@ -29,8 +29,11 @@ if(isset($_POST['h_search'])){
    // Store location for pre-filling the form
    $search_location = $h_location;
 
-   // Build query with location only
-   $query = "SELECT * FROM `property` WHERE 1=1";
+   // OPTIMIZED QUERY - Select only needed columns
+   $query = "SELECT id, property_name, address, price, type, offer, bhk, status,
+             furnished, carpet, bedroom, bathroom, balcony, image_01, image_02,
+             image_03, image_04, image_05, user_id, date
+             FROM `property` WHERE 1=1";
 
    if(!empty($h_location)){
       $query .= " AND (LOWER(address) LIKE LOWER('%{$h_location}%') OR LOWER(property_name) LIKE LOWER('%{$h_location}%'))";
@@ -69,8 +72,11 @@ if(isset($_POST['h_search'])){
    $search_status = $status;
    $search_furnished = $furnished;
 
-   // Build query with optional parameters - CASE INSENSITIVE
-   $query = "SELECT * FROM `property` WHERE 1=1";
+   // OPTIMIZED QUERY - Select only needed columns instead of SELECT *
+   $query = "SELECT id, property_name, address, price, type, offer, bhk, status,
+             furnished, carpet, bedroom, bathroom, balcony, image_01, image_02,
+             image_03, image_04, image_05, user_id, date
+             FROM `property` WHERE 1=1";
 
    if(!empty($location)){
       $query .= " AND (LOWER(address) LIKE LOWER('%{$location}%') OR LOWER(property_name) LIKE LOWER('%{$location}%'))";
@@ -103,7 +109,12 @@ if(isset($_POST['h_search'])){
    $select_properties->execute();
 
 }else{
-   $select_properties = $conn->prepare("SELECT * FROM `property` ORDER BY date DESC LIMIT 6");
+   // OPTIMIZED QUERY for default view
+   $select_properties = $conn->prepare("SELECT id, property_name, address, price, type,
+                                        offer, bhk, status, furnished, carpet, bedroom,
+                                        bathroom, balcony, image_01, image_02, image_03,
+                                        image_04, image_05, user_id, date
+                                        FROM `property` ORDER BY date DESC LIMIT 6");
    $select_properties->execute();
 }
 
