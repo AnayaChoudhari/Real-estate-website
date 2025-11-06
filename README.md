@@ -9,6 +9,7 @@ Live Website: **https://dreamspaceapp.42web.io**
 ![Home page](imgs/home.png)
 !['Find you perfect home' filter](imgs/Filter%20search.png)
 ![Property details page](imgs/Property%20details.png)
+![Admin dashboard page](imgs/admin-dashboard.png)
 ![About me page](imgs/about%20us.png)
 ![Contact us page](imgs/contact%20us.png)
 ![Property listings page](imgs/All%20listings.png)
